@@ -4,6 +4,7 @@ import math
 class Rank:
     def __init__(self):
         self.number_of_critic = 5
+        self.username = '2'
 
     @staticmethod
     def sem_correlation(user_1, user_2):

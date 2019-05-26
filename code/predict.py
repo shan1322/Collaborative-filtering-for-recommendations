@@ -1,13 +1,14 @@
 from code.rank import Rank
 import json
 
+movies = ""
 with open("../json/ratings.json") as ratings:
     ratings = json.load(ratings)
 obj = Rank()
 
 
 def predict(movie_name, rating):
-    correlation_dict = obj.rank_users(movie_name, ratings)
+    correlation_dict = obj.rank_users(obj.username, ratings)
     n = 0
     predicted_rating = 0
     for critic in correlation_dict.keys():
@@ -19,4 +20,4 @@ def predict(movie_name, rating):
     return predicted_rating
 
 
-print(predict('3', ratings))
+print(predict(movies, ratings))
